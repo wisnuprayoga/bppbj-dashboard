@@ -1,0 +1,31 @@
+{
+  "tenderSelesai":[
+    ["Bulan", "Paket Selesai"],
+    ["Januari", 73],
+    ["Februari", 53],
+    ["Maret", 52],
+    ["April", 149],
+    ["Mei", 123],
+    ["Juni", 98],
+    ["Juli", 133],
+    ["Agustus", 152],
+    ["September", 109],
+    ["Oktober", 88],
+    ["November", 23]
+  ],
+  "jenisTender":[
+    ["Jenis Tender", "Jumlah"],
+    ["Barang", 353],
+    ["Pekerjaan Konstruksi", 87],
+    ["Jasa Konsultansi", 89],
+    ["Jasa Lainnya", 244],
+    ["Complex", 38]
+  ],
+  "metodePengadaan":[
+    ["Metode", "Nilai"],
+    ["Tender", 12360],
+    ["Tender Cepat", 750],
+    ["Seleksi", 337],
+    ["Penunjukan Langsung", 547]
+  ]
+}

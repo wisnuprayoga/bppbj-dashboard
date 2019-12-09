@@ -1,0 +1,17 @@
+@import '../../lib/Global.scss';
+
+.loading-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 100%;
+}
+
+.loading-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+}

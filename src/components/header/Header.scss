@@ -1,0 +1,42 @@
+@import '../../lib/Global.scss';
+
+.header-box{
+  background-color:#9c1d01;
+  height: 40px;
+
+  .header{
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    display: flex;
+  
+    > div {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 1px 2px 1px rgba(0,0,0,0.5)
+    }
+  }
+
+  .strip {
+    position: relative;
+
+    > div{
+      top: -5px;
+      position: absolute;
+      height: 50px;
+      width: 5px;
+      background-color: #fff;
+      left: 40px;
+      transform: rotate(30deg)
+    }
+
+    div:last-child {
+      position: absolute;
+      left: 80px;
+    }
+  }
+}
+
+
+

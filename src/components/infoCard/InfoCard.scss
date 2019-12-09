@@ -1,0 +1,126 @@
+@import '../../lib/Global.scss';
+
+.card-box{
+  height: 80px;
+  background-color: white;
+  padding: 8px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+
+  .card-icon{
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    top: -20px;
+    left: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0,.14), 0 7px 10px -5px rgba(255, 152, 0,.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      font-size: 32px;
+      color: white;
+    }
+  }
+
+  .card-info{
+    margin-left: 100px;
+
+    .card-title{
+      color: $gray;
+      text-align: right;
+      margin-bottom: 0;
+    }
+
+    .card-value {
+      text-align: right;
+      font-size: 26px;
+      font-weight: bold;
+      text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+      color: $black;
+    }
+  }
+}
+
+.card-box-eff{
+  height: 80px;
+  background-color: white;
+  padding: 8px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+
+  .card-title-eff {
+    position: absolute;
+    background-color: #ec5a59;
+    height: 40px;
+    width: 170px;
+    top: -20px;
+    left: 20px;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.14);
+    border-radius: 5px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0,.14), 0 7px 10px -5px rgba(255, 152, 0,.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  .right {
+    right: 20px;
+    left: auto;
+    background-color: #62a3a1;
+  }
+
+  .card-value-eff {
+    padding: 28px 16px;
+    font-weight: bold;
+    font-size: 18px;
+    color: $black;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .right-val {
+    text-align: right;
+  }
+}
+
+.mid-box {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  top: 100px;
+  width: 160px;
+
+  .card-title-mid {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 40px;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 5px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0,.14), 0 7px 10px -5px rgba(255, 152, 0,.4);
+    background-color: #d9bc5c;
+    text-align: center;
+    padding-top: 8px;
+    color: white;
+    font-weight: bold;
+  }
+
+  .card-value-mid {
+    margin-top: -16px;
+    padding: 28px 16px;
+    font-weight: bold;
+    font-size: 18px;
+    color: $black;
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+}

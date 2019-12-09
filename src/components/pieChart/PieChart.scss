@@ -1,0 +1,24 @@
+@import '../../lib/Global.scss';
+
+.frame-box {
+  position: relative;
+  width: 100%;
+  background-color: $blue;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+
+  .chart-box{
+    position: absolute;
+    top: -25px;
+    left: 5%;
+    box-shadow: 0px 2px 15px 0px rgba(65, 65, 65, 0.295);
+  }
+
+  .chart-title{
+    padding: 0 24px 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.14);
+  }
+}

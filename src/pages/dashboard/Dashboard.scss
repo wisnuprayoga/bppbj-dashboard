@@ -1,0 +1,39 @@
+@import '../../lib/Global.scss';
+
+.dashboard{
+  padding-top: 50px;
+  background-color: #fafafa;
+  min-height: calc(100vh - 40px);
+  padding-bottom: 100px;
+}
+
+.row-dua {
+  position: relative;
+  padding-top: 60px;
+}
+
+.row-tiga {
+  padding-top: 120px;
+}
+
+.section-two{
+  background-color: #d7edff;
+  padding: 80px 0;
+  margin-top: 32px;
+}
+
+.last-update {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 8px;
+  background-color: $lightBlack;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
