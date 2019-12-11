@@ -88,14 +88,14 @@ class Dashboard extends Component {
             <Container>
               <Row className="">
                 <PieChartMetodePengadaan />
-                <PieChartTipePengadaan />
+                {/* <PieChartTipePengadaan /> */}
               </Row>
             </Container>
           </div>
-          <div className="last-update">
+          {/* <div className="last-update">
             <FaRegClock size="18"/> 
             <span style={{paddingRight:8}}></span>Update Terakhir : 21 Nov 19 08:30
-          </div>
+          </div> */}
         </div>
       );
     }
