@@ -4,11 +4,13 @@ import './Dashboard.scss';
 import { GeneralAPI } from '../../lib/js/api'
 import { ApiKey, InfoCardCode } from '../../lib/js/vars'
 import { FaRegClock } from 'react-icons/fa'
+import Tabletop from 'tabletop'
 
 import { InfoCard, InfoCardEfficientLeft, InfoCardEfficientRight, InfoCardEfficient } from '../../components/infoCard/InfoCard'
 import LoadingHome from '../../components/loading/Loading'
 import LineChartHistoryTender from '../../components/lineChart/LineChart'
-import {PieChartTipePengadaan, PieChartMetodePengadaan} from '../../components/pieChart/PieChart'
+import {PieChartTipePengadaan, PieChartMetodePengadaan, PieChartProgressTender} from '../../components/pieChart/PieChart'
+import { parse } from 'path';
 
 class Dashboard extends Component {
   constructor(props){
@@ -21,7 +23,8 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    this._getInfoCardData()
+    // this._getInfoCardData()
+    this._getInfoCardGo()
   }
 
   _getInfoCardData = () => {
@@ -38,29 +41,41 @@ class Dashboard extends Component {
     })
   };
 
+  _getInfoCardGo = () => {
+    var that = this
+    Tabletop.init({
+      key: '1NqaQCHixu14XpM0-EqxwmP51DrpQ2X-cQFQbILYBTxI',
+      callback: googleData => {
+        that.setState({infoCardData: googleData, isLoaded:true})
+      },
+      simpleSheet: true
+    })
+  }
+
   render() {
     const {isLoaded, infoCardData} = this.state
+    var data = infoCardData[0]
     if(isLoaded === true){
-      var persetase = (infoCardData.paket_selesai / infoCardData.paket_masuk * 100).toFixed(2)
+      var persetase = (parseInt(data["Selesai"]) / parseInt(data["Paket Masuk"]) * 100).toFixed(2)
       return (
         <div className="dashboard">
           <Container>
             <Row>
               <InfoCard 
                 title="Paket Masuk" 
-                value={infoCardData.paket_masuk} 
+                value={data["Paket Masuk"]} 
                 color="#0d9aae"
                 icon="1"
               />
               <InfoCard 
                 title="Paket Proses" 
-                value={infoCardData.paket_proses} 
+                value={parseInt(data["Paket Review"]) + parseInt(data["Paket Tayang"])} 
                 color="#6fcb9f"
                 icon="2"
               />
               <InfoCard 
                 title="Paket Selesai" 
-                value={infoCardData.paket_selesai}
+                value={data["Selesai"]}
                 color="#e69680"
                 icon="3"
               />
@@ -74,9 +89,9 @@ class Dashboard extends Component {
 
             <Row className="row-dua">
               <Col md="2" />
-              <InfoCardEfficient value={(42.245 - 35.420).toFixed(3)} />
-              <InfoCardEfficientLeft value={42.245}/>
-              <InfoCardEfficientRight value={35.420}/>
+              <InfoCardEfficient value={(parseFloat(data["Total Pagu"]) - parseFloat(data["Total Penawaran"])).toFixed(2)} />
+              <InfoCardEfficientLeft value={data["Total Pagu"]}/>
+              <InfoCardEfficientRight value={data["Total Penawaran"]}/>
             </Row>
 
             <Row className="row-tiga">
@@ -88,7 +103,7 @@ class Dashboard extends Component {
             <Container>
               <Row className="">
                 <PieChartMetodePengadaan />
-                {/* <PieChartTipePengadaan /> */}
+                <PieChartProgressTender />
               </Row>
             </Container>
           </div>

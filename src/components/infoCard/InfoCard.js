@@ -44,7 +44,7 @@ export class InfoCardEfficient extends Component {
             Efisiensi
           </div>
           <div className="card-value-mid">
-            Rp. {this.props.value} T <br/>
+            Rp. {this.props.value} M <br/>
             ( 24% )
           </div>
         </div>
@@ -61,7 +61,7 @@ export class InfoCardEfficientLeft extends Component {
             Pagu
           </div>
           <div className="card-value-eff">
-            Rp. {this.props.value} T
+            Rp. {this.props.value} M
           </div>
         </div>
       </Col>
@@ -78,7 +78,7 @@ export class InfoCardEfficientRight extends Component {
             Harga Penawaran
           </div>
           <div className="card-value-eff right-val">
-            Rp. {this.props.value} T
+            Rp. {this.props.value} M
           </div>
         </div>
       </Col>
