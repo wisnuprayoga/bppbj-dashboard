@@ -36,7 +36,6 @@ export class PieChartTipePengadaan extends Component {
 
   render() {
     const {isLoaded, chartData} = this.state
-
     if(isLoaded === true){
       return (
         <Col md="6">
@@ -47,7 +46,7 @@ export class PieChartTipePengadaan extends Component {
                 chartType="PieChart"
                 className="chart-box"
                 loader={<div>Loading Chart</div>}
-                data={chartData.jenisTender}
+                spreadSheetUrl={'https://docs.google.com/spreadsheets/d/1_aIrYLtsl6dMKBDW-w2eo2i2_IsgZMKeU60J2YbR9kI/edit#gid=0'}
                 options={{
                   chartArea: { width: '95%', height: '65%' },
                   pieHole: 0.4,
@@ -56,6 +55,7 @@ export class PieChartTipePengadaan extends Component {
                     easing: 'linear',
                     duration: 1000,
                   },
+                  pieSliceText: 'value',
                 }}
                 rootProps={{ 'data-testid': '1' }}
               />
@@ -117,20 +117,13 @@ export class PieChartMetodePengadaan extends Component {
                 chartType="PieChart"
                 className="chart-box"
                 loader={<div>Loading Chart</div>}
-                data={chartData.metodePengadaan}
+                spreadSheetUrl={'https://docs.google.com/spreadsheets/d/1ul4YB125ho2FVA_xK7qD_8UL8tEpXnOL7YWHWe9Bdxs/edit#gid=0'}
                 options={{
                   chartArea: { width: '95%', height: '65%' },
                   pieHole: 0.4,
                   colors: ['#d9bc5c','#e69680','#0d9aae','#666547'],
-                  pieSliceText: 'value-and-percentage',
+                  pieSliceText: 'value',
                   sliceVisibilityThreshold: 0.02,
-                  pieResidueSliceLabel: "Other",
-                  slices: {
-                    1: { offset: 0.1 },
-                    2: { offset: 0.2 },
-                    3: { offset: 0.1 },
-                  },
-                  prefix: 'Rp. '
                 }}
                 rootProps={{ 'data-testid': '1' }}
               />

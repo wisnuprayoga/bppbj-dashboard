@@ -44,7 +44,7 @@ class Dashboard extends Component {
   _getInfoCardGo = () => {
     var that = this
     Tabletop.init({
-      key: '1NqaQCHixu14XpM0-EqxwmP51DrpQ2X-cQFQbILYBTxI',
+      key: '1dN0itEcr5Bdma6JWiS3XLKrV9390LqI9rx6r35_fTrI',
       callback: googleData => {
         that.setState({infoCardData: googleData, isLoaded:true})
       },
@@ -89,21 +89,21 @@ class Dashboard extends Component {
 
             <Row className="row-dua">
               <Col md="2" />
-              <InfoCardEfficient value={(parseFloat(data["Total Pagu"]) - parseFloat(data["Total Penawaran"])).toFixed(2)} />
+              <InfoCardEfficient pagu={data["Total Pagu"]} penawaran={data["Total Penawaran"]} value={(parseFloat(data["Total Pagu"]) - parseFloat(data["Total Penawaran"])).toFixed(2)} />
               <InfoCardEfficientLeft value={data["Total Pagu"]}/>
               <InfoCardEfficientRight value={data["Total Penawaran"]}/>
             </Row>
 
             <Row className="row-tiga">
-              <LineChartHistoryTender />
               <PieChartTipePengadaan />
+              <PieChartMetodePengadaan />
             </Row>
           </Container>
           <div className="section-two">
             <Container>
               <Row className="">
-                <PieChartMetodePengadaan />
                 <PieChartProgressTender />
+                <LineChartHistoryTender />
               </Row>
             </Container>
           </div>
