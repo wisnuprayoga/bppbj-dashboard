@@ -45,7 +45,7 @@ export class InfoCardEfficient extends Component {
           </div>
           <div className="card-value-mid">
             Rp. {this.props.value} M <br/>
-            ( {this.props.percentage} %)
+            ( {((parseFloat(this.props.pagu) - parseFloat(this.props.penawaran)) / parseFloat(this.props.penawaran) * 100).toFixed(2)} % )
           </div>
         </div>
     );

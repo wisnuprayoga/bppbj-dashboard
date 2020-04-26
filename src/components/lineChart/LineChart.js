@@ -47,7 +47,7 @@ export default class LineChartHistoryTender extends Component {
               chartType="AreaChart"
               className="chart-box"
               loader={<div>Loading Chart</div>}
-              data={this.state.tenderSelesaiData.tenderSelesai}
+              spreadSheetUrl={'https://docs.google.com/spreadsheets/d/1fwNjCkUS-0nAUaB0q9hlCIgCku24tEcqycpLs5P-gOs/edit#gid=0'}
               options={{
                 hAxis: { title: 'Bulan', titleTextStyle: { color: '#333' } },
                 vAxis: { minValue: 0 },
