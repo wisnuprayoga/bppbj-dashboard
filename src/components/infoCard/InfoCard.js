@@ -45,7 +45,7 @@ export class InfoCardEfficient extends Component {
           </div>
           <div className="card-value-mid">
             Rp. {this.props.value} M <br/>
-            ( 24% )
+            ( {this.props.percentage} %)
           </div>
         </div>
     );

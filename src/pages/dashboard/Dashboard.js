@@ -57,6 +57,7 @@ class Dashboard extends Component {
     var data = infoCardData[0]
     if(isLoaded === true){
       var persetase = (parseInt(data["Selesai"]) / parseInt(data["Paket Masuk"]) * 100).toFixed(2)
+      var persentaseEffisien = ((parseFloat(data["Total Pagu"]) - parseFloat(data["Total Penawaran"]))/parseFloat(data["Total Pagu"]) * 100).toFixed(2)
       return (
         <div className="dashboard">
           <Container>
@@ -89,7 +90,10 @@ class Dashboard extends Component {
 
             <Row className="row-dua">
               <Col md="2" />
-              <InfoCardEfficient value={(parseFloat(data["Total Pagu"]) - parseFloat(data["Total Penawaran"])).toFixed(2)} />
+              <InfoCardEfficient 
+                value={(parseFloat(data["Total Pagu"]) - parseFloat(data["Total Penawaran"])).toFixed(2)} 
+                percentage={persentaseEffisien}
+              />
               <InfoCardEfficientLeft value={data["Total Pagu"]}/>
               <InfoCardEfficientRight value={data["Total Penawaran"]}/>
             </Row>

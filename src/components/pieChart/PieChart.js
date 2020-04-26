@@ -47,7 +47,10 @@ export class PieChartTipePengadaan extends Component {
                 chartType="PieChart"
                 className="chart-box"
                 loader={<div>Loading Chart</div>}
-                data={chartData.jenisTender}
+                spreadSheetUrl="https://docs.google.com/spreadsheets/d/1NqaQCHixu14XpM0-EqxwmP51DrpQ2X-cQFQbILYBTxI"
+                spreadSheetQueryParameters={{
+                  sheet:"Jenis"
+                }}
                 options={{
                   chartArea: { width: '95%', height: '65%' },
                   pieHole: 0.4,
