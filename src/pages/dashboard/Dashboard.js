@@ -56,7 +56,9 @@ class Dashboard extends Component {
     const {isLoaded, infoCardData} = this.state
     var data = infoCardData[0]
     if(isLoaded === true){
-      var persetase = (parseInt(data["Selesai"]) / parseInt(data["Paket Masuk"]) * 100).toFixed(2)
+      console.log(data)
+      var persetase = (parseInt(data["Selesai"].replace(',','')) / parseInt(data["Paket Masuk"].replace(',','')) * 100).toFixed(2)
+      console.log(parseInt(data["Paket Masuk"]))
       var persentaseEffisien = ((parseFloat(data["Total Pagu"]) - parseFloat(data["Total Penawaran"]))/parseFloat(data["Total Pagu"]) * 100).toFixed(2)
       return (
         <div className="dashboard">

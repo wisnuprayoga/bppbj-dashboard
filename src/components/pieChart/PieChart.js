@@ -61,6 +61,7 @@ export class PieChartTipePengadaan extends Component {
               />
             <div className="chart-title">
               Jenis Pengadaan
+              <div className="chart-info">* Nilai dalam Milliar</div>
             </div>
           </div>
         </Col>
@@ -129,6 +130,7 @@ export class PieChartMetodePengadaan extends Component {
               />
             <div className="chart-title">
               Metode Pengadaan
+              <div className="chart-info">* Nilai dalam Milliar</div>
             </div>
           </div>
         </Col>
@@ -203,6 +205,7 @@ export class PieChartProgressTender extends Component {
               />
             <div className="chart-title">
               Progress Pengajuan
+              <div className="chart-info">* Nilai dalam Milliar</div>
             </div>
           </div>
         </Col>

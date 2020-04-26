@@ -50,8 +50,8 @@ export default class LineChartHistoryTender extends Component {
               spreadSheetUrl={'https://docs.google.com/spreadsheets/d/1fwNjCkUS-0nAUaB0q9hlCIgCku24tEcqycpLs5P-gOs/edit#gid=0'}
               options={{
                 hAxis: { title: 'Bulan', titleTextStyle: { color: '#333' } },
-                vAxis: { minValue: 0 },
-                chartArea: { width: '85%', height: '65%' },
+                vAxis: { minValue: 0, format:'short', title: 'Total' },
+                chartArea: { width: '80%', height: '65%' },
                 legend: { position: 'bottom', alignment: 'start' },
                 animation: {
                   startup: true,

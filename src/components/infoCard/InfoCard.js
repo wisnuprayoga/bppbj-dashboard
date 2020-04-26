@@ -75,7 +75,7 @@ export class InfoCardEfficientRight extends Component {
       <Col md="4">
         <div className="card-box-eff">
           <div className="card-title-eff right">
-            Harga Penawaran
+            Penawaran
           </div>
           <div className="card-value-eff right-val">
             Rp. {this.props.value} M
