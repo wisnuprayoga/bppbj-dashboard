@@ -118,6 +118,13 @@ class Dashboard extends Component {
               </Row>
             </Container>
           </div>
+          <div>
+            <Container>
+              <div className="download-excel" onClick={ () => window.open("https://docs.google.com/spreadsheets/d/1UKFuX3c140v0PGN1phjxBOLHfgUmD_P6HGdnz2r3ojw/export?format=xlsx")}>
+                Download Excel
+              </div>
+            </Container>
+          </div>
           <div className="last-update">
             <FaRegClock size="18"/> 
             <span style={{paddingRight:8}}></span>Last Update : {data["Last Update"]}
