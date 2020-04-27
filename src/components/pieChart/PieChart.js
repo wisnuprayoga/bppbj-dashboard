@@ -11,31 +11,31 @@ export class PieChartTipePengadaan extends Component {
     super(props)
 
     this.state = {
-      isLoaded: false,
+      isLoaded: true,
       chartData: [],
     }
   }
 
-  componentDidMount() {
-    this._getTenderSelesai()
-  }
+  // componentDidMount() {
+  //   this._getTenderSelesai()
+  // }
 
-  _getTenderSelesai = () => {
-    let headers = { "secret-key": ApiKey}
-    var that = this
-    GeneralAPI().get(`/b/${TenderSelesaiCode}/latest`,{headers: headers})
-    .then(function (response) {
-      if(response.status === 200) {
-        that.setState({chartData: response.data, isLoaded:true})
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
-  };
+  // _getTenderSelesai = () => {
+  //   let headers = { "secret-key": ApiKey}
+  //   var that = this
+  //   GeneralAPI().get(`/b/${TenderSelesaiCode}/latest`,{headers: headers})
+  //   .then(function (response) {
+  //     if(response.status === 200) {
+  //       that.setState({chartData: response.data, isLoaded:true})
+  //     }
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   })
+  // };
 
   render() {
-    const {isLoaded, chartData} = this.state
+    const {isLoaded} = this.state
     if(isLoaded === true){
       return (
         <Col md="6">
@@ -45,7 +45,7 @@ export class PieChartTipePengadaan extends Component {
                 height={'360px'}
                 chartType="PieChart"
                 className="chart-box"
-                loader={<div>Loading Chart</div>}
+                loader={<Col md="6"><LoadingItem /></Col>}
                 spreadSheetUrl={'https://docs.google.com/spreadsheets/d/1_aIrYLtsl6dMKBDW-w2eo2i2_IsgZMKeU60J2YbR9kI/edit#gid=0'}
                 options={{
                   chartArea: { width: '95%', height: '65%' },
@@ -67,13 +67,6 @@ export class PieChartTipePengadaan extends Component {
         </Col>
       );
     }
-    else {
-      return (
-        <Col md="6">
-          <LoadingItem />
-        </Col>
-      )
-    }
   }
 }
 
@@ -82,31 +75,13 @@ export class PieChartMetodePengadaan extends Component {
     super(props)
 
     this.state = {
-      isLoaded: false,
+      isLoaded: true,
       chartData: [],
     }
   }
 
-  componentDidMount() {
-    this._getTenderSelesai()
-  }
-
-  _getTenderSelesai = () => {
-    let headers = { "secret-key": ApiKey}
-    var that = this
-    GeneralAPI().get(`/b/${TenderSelesaiCode}/latest`,{headers: headers})
-    .then(function (response) {
-      if(response.status === 200) {
-        that.setState({chartData: response.data, isLoaded:true})
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
-  };
-
   render() {
-    const {isLoaded, chartData} = this.state
+    const {isLoaded} = this.state
 
     if(isLoaded === true){
       return (
@@ -117,7 +92,7 @@ export class PieChartMetodePengadaan extends Component {
                 height={'360px'}
                 chartType="PieChart"
                 className="chart-box"
-                loader={<div>Loading Chart</div>}
+                loader={<Col md="6"><LoadingItem /></Col>}
                 spreadSheetUrl={'https://docs.google.com/spreadsheets/d/1ul4YB125ho2FVA_xK7qD_8UL8tEpXnOL7YWHWe9Bdxs/edit#gid=0'}
                 options={{
                   chartArea: { width: '95%', height: '65%' },
@@ -136,13 +111,6 @@ export class PieChartMetodePengadaan extends Component {
         </Col>
       );
     }
-    else {
-      return (
-        <Col md="6">
-          <LoadingItem />
-        </Col>
-      )
-    }
   }
 }
 
@@ -151,28 +119,10 @@ export class PieChartProgressTender extends Component {
     super(props)
 
     this.state = {
-      isLoaded: false,
+      isLoaded: true,
       chartData: [],
     }
   }
-
-  componentDidMount() {
-    this._getTenderSelesai()
-  }
-
-  _getTenderSelesai = () => {
-    let headers = { "secret-key": ApiKey}
-    var that = this
-    GeneralAPI().get(`/b/${TenderSelesaiCode}/latest`,{headers: headers})
-    .then(function (response) {
-      if(response.status === 200) {
-        that.setState({chartData: response.data, isLoaded:true})
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
-  };
 
   render() {
     const {isLoaded, chartData} = this.state
@@ -186,15 +136,10 @@ export class PieChartProgressTender extends Component {
                 height={'360px'}
                 chartType="PieChart"
                 className="chart-box"
-                loader={<div>Loading Chart</div>}
-                data={[
-                  ['Progress', 'Total'],
-                  ['Sudah di BPPBJ', 1293],
-                  ['Belum di Ajukan', 92],
-                ]}
+                loader={<Col md="6"><LoadingItem /></Col>}
+                spreadSheetUrl={'https://docs.google.com/spreadsheets/d/18yc7uBC4nmZDSL6_Wge18qzGToj-aGFW1ss8qHfNMtA/edit#gid=0'}
                 options={{
                   chartArea: { width: '95%', height: '65%' },
-                  pieHole: 0.4,
                   animation: {
                     startup: true,
                     easing: 'linear',
@@ -210,13 +155,6 @@ export class PieChartProgressTender extends Component {
           </div>
         </Col>
       );
-    }
-    else {
-      return (
-        <Col md="6">
-          <LoadingItem />
-        </Col>
-      )
     }
   }
 }

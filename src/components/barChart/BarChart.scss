@@ -1,0 +1,38 @@
+@import '../../lib/Global.scss';
+
+.bar-frame-box {
+  position: relative;
+  width: 100%;
+  background-color: $blue;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+
+  .chart-frame {
+    position: relative;
+    width: 95%;
+    padding: 20px;
+    left: 2.5%;
+    top: -25px;
+    background-color: white;
+    box-shadow: 0px 2px 15px 0px rgba(65, 65, 65, 0.295);
+  }
+
+  .chart-title{
+    padding: 0 24px 31px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.14);
+  }
+
+  .chart-info {
+    padding: 8px;
+    font-size: 12px;
+    position: absolute;
+    right: 28px;
+    top: 370px;
+    font-weight: normal;
+    color: $black;
+    background-color: white;
+  }
+}

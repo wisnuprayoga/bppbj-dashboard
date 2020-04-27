@@ -11,28 +11,28 @@ export default class LineChartHistoryTender extends Component {
     super(props)
 
     this.state = {
-      isLoaded: false,
+      isLoaded: true,
       tenderSelesaiData: [],
     }
   }
 
-  componentDidMount() {
-    this._getTenderSelesai()
-  }
+  // componentDidMount() {
+  //   this._getTenderSelesai()
+  // }
 
-  _getTenderSelesai = () => {
-    let headers = { "secret-key": ApiKey}
-    var that = this
-    GeneralAPI().get(`/b/${TenderSelesaiCode}/latest`,{headers: headers})
-    .then(function (response) {
-      if(response.status === 200) {
-        that.setState({tenderSelesaiData: response.data, isLoaded:true})
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
-  };
+  // _getTenderSelesai = () => {
+  //   let headers = { "secret-key": ApiKey}
+  //   var that = this
+  //   GeneralAPI().get(`/b/${TenderSelesaiCode}/latest`,{headers: headers})
+  //   .then(function (response) {
+  //     if(response.status === 200) {
+  //       that.setState({tenderSelesaiData: response.data, isLoaded:true})
+  //     }
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   })
+  // };
 
   render() {
     const {isLoaded, tenderSelesaiData} = this.state
@@ -62,7 +62,7 @@ export default class LineChartHistoryTender extends Component {
               }}
             />
             <div className="chart-title">
-              History Tender
+              History Tayang
             </div>
           </div>
         </Col>

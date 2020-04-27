@@ -9,6 +9,7 @@ import Tabletop from 'tabletop'
 import { InfoCard, InfoCardEfficientLeft, InfoCardEfficientRight, InfoCardEfficient } from '../../components/infoCard/InfoCard'
 import LoadingHome from '../../components/loading/Loading'
 import LineChartHistoryTender from '../../components/lineChart/LineChart'
+import BarChartKategori from '../../components/barChart/BarChart'
 import {PieChartTipePengadaan, PieChartMetodePengadaan, PieChartProgressTender} from '../../components/pieChart/PieChart'
 import { parse } from 'path';
 
@@ -110,10 +111,17 @@ class Dashboard extends Component {
               </Row>
             </Container>
           </div>
-          {/* <div className="last-update">
+          <div className="section-tree">
+            <Container>
+              <Row>
+                <BarChartKategori />
+              </Row>
+            </Container>
+          </div>
+          <div className="last-update">
             <FaRegClock size="18"/> 
-            <span style={{paddingRight:8}}></span>Update Terakhir : 21 Nov 19 08:30
-          </div> */}
+            <span style={{paddingRight:8}}></span>Last Update : {data["Last Update"]}
+          </div>
         </div>
       );
     }
