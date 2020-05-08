@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 import Header from './components/header/Header'
 import Dashboard from './pages/dashboard/Dashboard'

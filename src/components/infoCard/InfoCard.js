@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import { Col } from 'reactstrap';
-import { FaArrowCircleDown, FaHourglassHalf, FaTrophy, FaRegChartBar } from 'react-icons/fa';
 import './InfoCard.scss';
 
 export class InfoCard extends Component {
   _icons = (val) => {
     if(val === '1')
-      return(<FaArrowCircleDown />)
+      return(<img src='images/1.png' />)
     else if(val === '2')
-      return(<FaHourglassHalf/>)
+      return(<img src='images/2.png' />)
     else if(val === '3')
-      return(<FaTrophy/>)
+      return(<img src='images/3.png' />)
     else if(val === '4')
-      return(<FaRegChartBar />)
+      return(<img src='images/4.png' />)
   }
 
   render() {
