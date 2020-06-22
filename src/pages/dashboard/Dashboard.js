@@ -93,7 +93,7 @@ class Dashboard extends Component {
 
             <Row className="row-dua">
               <Col md="2" />
-              <InfoCardEfficient pagu={data["Total Pagu"]} penawaran={data["Total Penawaran"]} value={(parseFloat(data["Total Pagu"]) - parseFloat(data["Total Penawaran"])).toFixed(2)} />
+              <InfoCardEfficient pagu={data["Total Pagu"]} penawaran={data["Total Penawaran"]} value={(parseFloat(data["Total Pagu"].replace(',','')) - parseFloat(data["Total Penawaran"].replace(',',''))).toFixed(2)} />
               <InfoCardEfficientLeft value={data["Total Pagu"]}/>
               <InfoCardEfficientRight value={data["Total Penawaran"]}/>
             </Row>
