@@ -44,7 +44,7 @@ export class InfoCardEfficient extends Component {
           </div>
           <div className="card-value-mid">
             Rp. {this.props.value} M <br/>
-            ( {((parseFloat(this.props.pagu.replace(',','')) - parseFloat(this.props.penawaran.replace(',',''))) / parseFloat(this.props.penawaran.replace(',','')) * 100).toFixed(2)} % )
+            ( {((parseFloat(this.props.pagu.replace(',','')) - parseFloat(this.props.penawaran.replace(',',''))) / parseFloat(this.props.pagu.replace(',','')) * 100).toFixed(2)} % )
           </div>
         </div>
     );
