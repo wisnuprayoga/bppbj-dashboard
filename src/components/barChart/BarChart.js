@@ -56,9 +56,9 @@ export default class BarChartKategori extends Component {
             <div className="chart-title">
               Tender Kategori
               <div className="chart-info">
-                Kategori 1: Nilai > 10 M dan Waktu Pelaksanaan > 4 Bulan <br/>
-                Kategori 2: Nilai &lt; 10 M dan Waktu Pelaksanaan > 4 Bulan <br/>
-                Kategori 3: Nilai > 10 M dan Waktu Pelaksanaan &lt; 4 Bulan <br/>
+                Kategori 1: Nilai {'>'} 10 M dan Waktu Pelaksanaan {'>'} 4 Bulan <br/>
+                Kategori 2: Nilai &lt; 10 M dan Waktu Pelaksanaan {'>'} 4 Bulan <br/>
+                Kategori 3: Nilai {'>'} 10 M dan Waktu Pelaksanaan &lt; 4 Bulan <br/>
                 Kategori 4: Nilai &lt; 10 M dan Waktu Pelaksanaan &lt; 4 Bulan
               </div>
             </div>

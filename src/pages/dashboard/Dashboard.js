@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Col, Row } from 'reactstrap';
+import { Container, Col, Row, Dropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap';
 import './Dashboard.scss';
 import { GeneralAPI } from '../../lib/js/api'
 import { ApiKey, InfoCardCode } from '../../lib/js/vars'
@@ -11,7 +11,7 @@ import LoadingHome from '../../components/loading/Loading'
 import LineChartHistoryTender from '../../components/lineChart/LineChart'
 import BarChartKategori from '../../components/barChart/BarChart'
 import {PieChartTipePengadaan, PieChartMetodePengadaan, PieChartProgressTender} from '../../components/pieChart/PieChart'
-import { parse } from 'path';
+import { parse, relative } from 'path';
 
 class Dashboard extends Component {
   constructor(props){
@@ -19,13 +19,17 @@ class Dashboard extends Component {
 
     this.state = {
       isLoaded: false,
+      dropdownOpen: true, 
+      setDropdownOpen: true,
       infoCardData: [],
+      sourceData: []
     }
   }
 
   componentDidMount() {
     // this._getInfoCardData()
-    this._getInfoCardGo()
+    this._getSourceData()
+    //this._getInfoCardGo()
   }
 
   _getInfoCardData = () => {
@@ -53,17 +57,44 @@ class Dashboard extends Component {
     })
   }
 
+  _getSourceData = () => {
+    var that = this
+    Tabletop.init({
+      key: '1xR9jxDNjTPAGcSbrJqzBskdeOC8605o610aRVOrIyFA',
+      callback: (googleData, tabletop) => {
+        console.log(tabletop.sheets("Data")["elements"])
+        that.setState({sourceData: tabletop.sheets("Data")["elements"], isLoaded:false})
+        console.log(JSON.parse(tabletop.sheets("Data")["elements"][0]["Data"]))
+      },
+      simpleSheet: true,
+    })
+  }
+
+  _toggle = () => {
+    this.setState({dropdownOpen: !this.state.dropdownOpen})
+    console.log(this.dropdownOpen)
+  }
+
   render() {
-    const {isLoaded, infoCardData} = this.state
+    const {isLoaded, infoCardData, sourceData} = this.state
     var data = infoCardData[0]
+    
+
     if(isLoaded === true){
-      console.log(data)
       var persetase = (parseInt(data["Selesai"].replace(',','')) / parseInt(data["Paket Masuk"].replace(',','')) * 100).toFixed(2)
-      console.log(parseInt(data["Paket Masuk"]))
       var persentaseEffisien = ((parseFloat(data["Total Pagu"]) - parseFloat(data["Total Penawaran"]))/parseFloat(data["Total Pagu"]) * 100).toFixed(2)
       return (
         <div className="dashboard">
           <Container>
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this._toggle} className="drop-ta">
+              <DropdownToggle caret>
+                2021
+              </DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem text>2020</DropdownItem>
+                <DropdownItem text>2021</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
             <Row>
               <InfoCard 
                 title="Paket Masuk" 
